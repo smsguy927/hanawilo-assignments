@@ -28,12 +28,16 @@ function transformNumberArray(arr, fn){
 const squareAndSubtractOne= x => x ** 2 - 1;
 
 // Test the functions
-let test1 = addSeven(32)
-console.log(test1)
+console.log('Problem 3:')
+console.log('addSevenFunction')
+let thirtyTwo = 32
+console.log(`Before: ${thirtyTwo}`)
+thirtyTwo = addSeven(thirtyTwo)
+console.log(`After: ${thirtyTwo}`)
 let test2Arr = [1, 2, 3, 4, 5, 6, 7, 8]
-console.log(test2Arr)
+console.log(`Array before squareAndSubtractOne: ${test2Arr}`)
 transformNumberArray(test2Arr, squareAndSubtractOne)
-console.log(test2Arr)
+console.log(`Array after squareAndSubtractOne: ${test2Arr}`)
 
 // Problem #4: What is the value of the console.log of “a”, “b”, and “c” shown in the code below?
 //const a = 'hi';
@@ -57,11 +61,13 @@ console.log(test2Arr)
 // - For...of
 //
 // The for loops should console.log out each of the values in order like this: e. g. 1, 2, 3, 4, 5, 6, 7, 8 ...
+console.log('Problem 5')
 const someArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log('For Statement')
 for(let i = 0; i < someArray.length; i++) {
     console.log(someArray[i])
 }
-
+console.log('For...of')
 for (let num of someArray) {
     console.log(num)
 }
@@ -117,8 +123,8 @@ Array.prototype.merge = function(arr2) {
 const someArray2 = [1, 2, 3, 4, 5];
 someArray2.concat() // non mutative
 someArray2.length // non mutative
-someArray2.filter(x => x != 3) // non mutative
-someArray2.find(x => x == 5) // non mutative
+someArray2.filter(x => x !== 3) // non mutative
+someArray2.find(x => x === 5) // non mutative
 someArray2.slice(2, 4) // non mutative
 const removed = someArray2.splice(2, 2) // mutative
 someArray2.merge(removed) // reverses splice mutation
@@ -154,6 +160,7 @@ thisArray.sort() // mutative
 // - // john doe
 // - // 22
 // - // 123 test address
+console.log('Problem 7')
 const someObject = {
     color: 'black'
 }
@@ -180,6 +187,7 @@ for (const prop in someObject){
 // // 1
 // // 2
 // // 3
+console.log('Problem 8: ')
  const numbers = [
  {
      num: 1
@@ -287,6 +295,7 @@ async function fetchRickMorty1() {
 
 
 function logNames(x) {
+    console.log('Problem 15a')
     console.log(x['results'].map(i => i['name']))
 }
 
@@ -313,6 +322,7 @@ function logBothNames([rickMorty, user]) {
     const randomUserFirstName = randomUserNameObj['first']
     const randomUserLastName = randomUserNameObj['last']
     loggingArray.push(`${randomUserFirstName} ${randomUserLastName}`)
+    console.log('Problem 15b')
     console.log(loggingArray)
 }
 
@@ -349,6 +359,7 @@ class Shape {
 
 const square = new Shape('square', 4, 5);
 const triangle = new Shape('triangle', 3, 3);
+console.log('Problem 16')
 console.log(`Square perimeter: ${square.calcPerimeter()}`)
 console.log(`Triangle perimeter: ${triangle.calcPerimeter()}`)
 
@@ -365,10 +376,11 @@ class Square extends Shape {
     }
 }
 const square2 = new Square(5/40);
+console.log('Problem 17')
 console.log(`Square 2 perimeter: ${square2.calcPerimeter()}`)
-//     Problem #18: Using Git, please push this code up to your GitHub repo following the directions:
+// Problem #18: Using Git, please push this code up to your GitHub repo following the directions:
 //
-//     1. Initialize your project:   git init
+// 1. Initialize your project:   git init
 // 2. Git checkout to:    git checkout -b week1-day
 // 3. Git add all commits:    git add --all
 // 4. Git commit:    git commit -m ‘week1-day1 assignment complete’
@@ -381,11 +393,6 @@ console.log(`Square 2 perimeter: ${square2.calcPerimeter()}`)
 
 
 
-
-
-
-//
-//
 
 
 
