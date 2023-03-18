@@ -1,14 +1,9 @@
-/*
-const HTTP = {
-    OK: 200,
-    CREATED: 201
-}
-*/
 const http = {
     good: {
         ok: 200,
         created: 201,
-        noContent: 204
+        noContent: 204,
+        partialContent: 206
     },
     moved: {
         permanently: 301,
@@ -33,8 +28,18 @@ const http = {
     }
 }
 
-const DEFAULT_PORT = 5001
+const defaults = {
+    numbers: {
+        port: 5001,
+        exitFail: 1
+    },
+    messages: {
+        serverError: 'Server Error'
+    }
+}
+
+
 module.exports = {
     http,
-    DEFAULT_PORT
+    defaults
 }
