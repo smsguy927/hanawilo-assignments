@@ -30,13 +30,15 @@ const http = {
 
 const defaults = {
     numbers: {
-        port: 5001,
+        portStart: 5001,
+        portEnd: 5100,
         exitFail: 1
     },
     messages: {
         serverError: 'Server Error'
     }
 }
+
 
 
 module.exports = {
