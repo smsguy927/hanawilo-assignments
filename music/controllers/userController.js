@@ -30,7 +30,7 @@ const getUsers = async (req, res, next) => {
 
 const createUser = async(req, res, next) => {
     try{
-        const result  = await User.create()
+        const result  = await User.create(req.body)
         res.status(http.good.created)
             .setHeader('Content-Type', 'application/json')
             .json(result)
@@ -42,7 +42,7 @@ const createUser = async(req, res, next) => {
 
 const deleteUsers = async(req, res, next) => {
     try{
-        const result  = await User.deleteMany()
+        const result  = await User.deleteMany(req.body)
         res.status(http.good.noContent)
             .setHeader('Content-Type', 'application/json')
             .json(result)
@@ -53,7 +53,7 @@ const deleteUsers = async(req, res, next) => {
 
 const getUser = async(req, res, next) => {
     try{
-        const result  = await User.findOne()
+        const result  = await User.findOne(req.body)
         res.status(http.good.ok)
             .setHeader('Content-Type', 'application/json')
             .json(result)
@@ -65,7 +65,7 @@ const getUser = async(req, res, next) => {
 
 const putUser = async(req, res, next) => {
     try{
-        const result  = await User.findOneAndReplace()
+        const result  = await User.findOneAndReplace(req.body)
         res.status(http.good.ok)
             .setHeader('Content-Type', 'application/json')
             .json(result)
@@ -76,7 +76,7 @@ const putUser = async(req, res, next) => {
 
 const deleteUser = async(req, res, next) => {
     try{
-        const result  = await User.find()
+        const result  = await User.deleteOne(req.body)
         res.status(http.good.noContent)
             .setHeader('Content-Type', 'application/json')
             .json(result)

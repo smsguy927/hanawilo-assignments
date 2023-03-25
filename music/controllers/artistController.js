@@ -30,7 +30,8 @@ const getArtists = async (req, res, next) => {
 
 const createArtist = async(req, res, next) => {
     try{
-        const result  = await Artist.create()
+        const result  = await Artist.create(req.body)
+        console.log(result)
         res.status(http.good.created)
             .setHeader('Content-Type', 'application/json')
             .json(result)
@@ -42,7 +43,7 @@ const createArtist = async(req, res, next) => {
 
 const deleteArtists = async(req, res, next) => {
     try{
-        const result  = await Artist.deleteMany()
+        const result  = await Artist.deleteMany(req.body)
         res.status(http.good.noContent)
             .setHeader('Content-Type', 'application/json')
             .json(result)
@@ -53,7 +54,7 @@ const deleteArtists = async(req, res, next) => {
 
 const getArtist = async(req, res, next) => {
     try{
-        const result  = await Artist.findOne()
+        const result  = await Artist.findOne(req.body)
         res.status(http.good.ok)
             .setHeader('Content-Type', 'application/json')
             .json(result)
@@ -65,7 +66,7 @@ const getArtist = async(req, res, next) => {
 
 const putArtist = async(req, res, next) => {
     try{
-        const result  = await Artist.findOneAndReplace()
+        const result  = await Artist.findOneAndReplace(req.body)
         res.status(http.good.ok)
             .setHeader('Content-Type', 'application/json')
             .json(result)
@@ -76,7 +77,7 @@ const putArtist = async(req, res, next) => {
 
 const deleteArtist = async(req, res, next) => {
     try{
-        const result  = await Artist.find()
+        const result  = await Artist.find(req.body)
         res.status(http.good.noContent)
             .setHeader('Content-Type', 'application/json')
             .json(result)
